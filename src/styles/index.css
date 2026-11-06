@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  background: transparent !important;
+  user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: none !important;
+  outline: none !important;
+}
+
+/* 
+ * TRUE LIQUID GLASS DROPLET (Ref: Apple iOS 18/VisionOS / Refraction Lens)
+ * 3D Convex curved glass with chromatic refraction, specular edge sheen & caustic core
+ */
+.liquid-lens-bubble {
+  position: relative;
+  background: radial-gradient(
+    circle at 35% 25%,
+    rgba(255, 255, 255, 0.65) 0%,
+    rgba(255, 255, 255, 0.25) 30%,
+    rgba(255, 255, 255, 0.05) 55%,
+    rgba(0, 0, 0, 0.25) 100%
+  ), rgba(30, 30, 36, 0.55);
+  backdrop-filter: blur(28px) saturate(220%) contrast(115%);
+  -webkit-backdrop-filter: blur(28px) saturate(220%) contrast(115%);
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow:
+    /* Top specular glare reflection */
+    inset 0 2px 4px rgba(255, 255, 255, 0.95),
+    inset 0 4px 10px rgba(255, 255, 255, 0.4),
+    /* Chromatic refraction rim */
+    inset 2px 0 6px rgba(120, 200, 255, 0.35),
+    inset -2px 0 6px rgba(255, 140, 180, 0.35),
+    /* Bottom ambient bounce light */
+    inset 0 -3px 8px rgba(255, 255, 255, 0.3),
+    inset 0 -6px 14px rgba(0, 0, 0, 0.4),
+    /* Soft floating dispersion */
+    0 12px 32px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-lens-bubble:hover {
+  transform: scale(1.04);
+  border-color: rgba(255, 255, 255, 0.65);
+  box-shadow:
+    inset 0 2px 6px rgba(255, 255, 255, 1),
+    inset 0 5px 14px rgba(255, 255, 255, 0.5),
+    inset 2px 0 8px rgba(120, 200, 255, 0.5),
+    inset -2px 0 8px rgba(255, 140, 180, 0.5),
+    inset 0 -3px 10px rgba(255, 255, 255, 0.4),
+    0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* 
+ * EXPANDED LIQUID GLASS SHEET (True Frosted Glass Canvas)
+ */
+.liquid-glass-panel {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(255, 255, 255, 0.06) 40%,
+    rgba(255, 255, 255, 0.03) 100%
+  ), rgba(24, 24, 28, 0.72);
+  backdrop-filter: blur(45px) saturate(210%) contrast(110%);
+  -webkit-backdrop-filter: blur(45px) saturate(210%) contrast(110%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.75), /* Bright top specular refraction */
+    inset 1px 0 0 rgba(255, 255, 255, 0.25),
+    inset -1px 0 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1.5px 0 rgba(255, 255, 255, 0.1),
+    0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+/* Apple Liquid Interactive Control Pill */
+.liquid-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 2px 8px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.liquid-control:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 4px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-0.5px);
+}
+
+/* Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
